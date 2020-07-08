@@ -24,7 +24,7 @@ First case is deploying to AWS.
 ### Structure 1 - mininal AWS with load balancer
 
 ```
-mix dpl.gen aws-lb
+mix dpl.gen aws_lb
 ```
 
 What you get
