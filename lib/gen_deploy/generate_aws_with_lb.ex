@@ -6,7 +6,7 @@ defmodule GenDeploy.GenerateAwsWithLb do
   import GenDeploy.FilesAndDirs,
     only: [
       terraform_dest_path: 0,
-      terraform_source_files: 0,
+      terraform_source_path: 0,
       bin_dest_path: 0,
       bin_source_path: 0
     ]
@@ -32,8 +32,8 @@ defmodule GenDeploy.GenerateAwsWithLb do
   defp generate_terraform_files(release_name) do
     create_directory(terraform_dest_path())
 
-    for file_name <- File.ls!(terraform_source_files()) do
-      source = Path.join(terraform_source_files(), file_name)
+    for file_name <- File.ls!(terraform_source_path()) do
+      source = Path.join(terraform_source_path(), file_name)
       dest = Path.join(terraform_dest_path(), file_name)
       copy_template(source, dest, release_name: release_name)
     end

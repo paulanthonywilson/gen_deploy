@@ -20,8 +20,8 @@ defmodule GenDeploy.FilesAndDirsTest do
     expected_source_path = Path.join(Mix.Project.app_path(), "priv/templates/terraform")
 
     in_tmp_project(:mavis, fn ->
-      assert FilesAndDirs.terraform_source_files() == expected_source_path
-      assert File.exists?(Path.join(FilesAndDirs.terraform_source_files(), "main.tf"))
+      assert FilesAndDirs.terraform_source_path() == expected_source_path
+      assert File.exists?(Path.join(FilesAndDirs.terraform_source_path(), "main.tf"))
     end)
   end
 

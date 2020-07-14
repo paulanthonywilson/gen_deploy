@@ -12,8 +12,8 @@ defmodule GenDeploy.FilesAndDirs do
     |> Path.expand()
   end
 
-  @spec terraform_source_files :: String.t()
-  def terraform_source_files do
+  @spec terraform_source_path :: String.t()
+  def terraform_source_path do
     Path.join(@template_dir, "terraform")
   end
 
